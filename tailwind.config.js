@@ -3,28 +3,43 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      fontFamily: {
-        generalsans: ['General Sans', 'sans-serif'],
-      },
       colors: {
-        black: {
-          DEFAULT: '#000',
-          100: '#010103',
-          200: '#0E0E10',
-          300: '#1C1C21',
-          500: '#3A3A49',
-          600: '#1A1A1A',
-        },
-        white: {
-          DEFAULT: '#FFFFFF',
-          800: '#E4E4E6',
-          700: '#D6D9E9',
-          600: '#AFB0B6',
-          500: '#62646C',
-        },
+        black: '#191624',
       },
-      backgroundImage: {
-        terminal: "url('/assets/terminal.png')",
+      animation: {
+        slideup: 'slideup 1s ease-in-out',
+        slidedown: 'slidedown 1s ease-in-out',
+        slideleft: 'slideleft 1s ease-in-out',
+        slideright: 'slideright 1s ease-in-out',
+        wave: 'wave 1.2s linear infinite',
+        slowfade: 'slowfade 2.2s ease-in-out',
+      },
+      keyframes: {
+        slowfade: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },
+        slideup: {
+          from: { opacity: 0, transform: 'translateY(25%)' },
+          to: { opacity: 1, transform: 'none' },
+        },
+        slidedown: {
+          from: { opacity: 0, transform: 'translateY(-25%)' },
+          to: { opacity: 1, transform: 'none' },
+        },
+        slideleft: {
+          from: { opacity: 0, transform: 'translateX(-20px)' },
+          to: { opacity: 1, transform: 'translateX(0)' },
+        },
+        slideright: {
+          from: { opacity: 0, transform: 'translateX(20px)' },
+          to: { opacity: 1, transform: 'translateX(0)' },
+        },
+        wave: {
+          '0%': { transform: 'scale(0)' },
+          '50%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(0)' },
+        },
       },
     },
   },
