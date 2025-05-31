@@ -9,8 +9,18 @@ export const deezerCoreApi = createApi({
     endpoints: (builder) => ({
         getTopCharts: builder.query({
             query: (countryCode = "RS") => `/chart/${countryCode}`
+        }),
+        getArtistDetails: builder.query({
+            query: (artistId) => `/artist/${artistId}`
+        }),
+        getArtistTopTracks: builder.query({
+            query: ({artistId, limit = 10}) => `/artist/${artistId}/top?limit=${limit}`
         })
     })
 });
 
-export const { useGetTopChartsQuery } = deezerCoreApi;
+export const {
+    useGetTopChartsQuery,
+    useGetArtistDetailsQuery,
+    useGetArtistTopTracksQuery,
+} = deezerCoreApi;

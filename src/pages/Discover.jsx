@@ -2,7 +2,6 @@ import { useDispatch, useSelector} from "react-redux";
 
 import {Error, Loader, SongCard} from "../components";
 import {genres} from "../assets/constants";
-// import {useGetTopChartsQuery} from "../redux/services/shazamCore";
 import {useGetTopChartsQuery} from "../redux/services/deezerCore";
 import playPause from "../components/PlayPause.jsx";
 
@@ -15,6 +14,8 @@ const Discover = () => {
     if (isFetching) return <Loader title="Loading songs..."/>;
 
     if (error) return <Error/>;
+
+    const topChartData = data.tracks.data;
 
     return (
         <div className="flex flex-col">
@@ -31,14 +32,14 @@ const Discover = () => {
             </div>
 
             <div className="flex flex-wrap sm:justify-start justify-center gap-8">
-                {data.tracks?.data.map((track, i) => (
+                {topChartData.map((track, i) => (
                     <SongCard
                         song={track}
                         isPlaying={isPlaying}
                         activeSong={activeSong}
                         handlePauseClick={() => dispatch(playPause(false))}
                         handlePlayClick={() => dispatch(playPause(true))}
-                        data={data}
+                        data={topChartData}
                         index={i}
                         key={track.key}
                     />
