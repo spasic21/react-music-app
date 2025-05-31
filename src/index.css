@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  overflow-x: hidden;
+}
+
 /* Active Navigation Link */
 .active {
   @apply text-lime-500;

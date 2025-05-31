@@ -1,5 +1,5 @@
 const DetailsHeader = ({artistData}) => (
-    <div className="flex flex-row mb-10">
+    <div className="w-full flex flex-row mb-10">
         <img src={artistData?.picture_big} alt={artistData?.name} className="w-64 h-64 object-cover rounded-full"/>
         <div className="flex flex-col justify-end ml-5">
             <h2 className="text-white text-5xl font-bold text-left ml-5">{artistData?.name}</h2>

@@ -9,17 +9,19 @@ import RelatedSongs from './RelatedSongs';
 import MusicPlayer from './MusicPlayer';
 import Loader from './Loader';
 import Error from './Error';
+import Discography from './Discography';
 
 export {
-  TopPlay,
-  Sidebar,
-  SongCard,
-  Searchbar,
-  ArtistCard,
-  DetailsHeader,
-  SongBar,
-  RelatedSongs,
-  MusicPlayer,
-  Loader,
-  Error,
+    TopPlay,
+    Sidebar,
+    SongCard,
+    Searchbar,
+    ArtistCard,
+    DetailsHeader,
+    SongBar,
+    RelatedSongs,
+    MusicPlayer,
+    Loader,
+    Error,
+    Discography
 };
