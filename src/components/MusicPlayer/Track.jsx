@@ -1,4 +1,5 @@
 import musicNote from '../../assets/musicNote.png';
+import {Link} from "react-router-dom";
 
 const Track = ({isPlaying, isActive, activeSong}) => (
     <div className="flex-1 flex items-center justify-start">
@@ -11,7 +12,11 @@ const Track = ({isPlaying, isActive, activeSong}) => (
                 {activeSong?.title || 'No Active Song'}
             </p>
             <p className="truncate text-gray-300">
-                {activeSong?.artist?.name || 'No Active Artist'}
+                {activeSong?.artist?.name ? (
+                    <Link to={`/artists/${activeSong?.artist?.id}`}>
+                        {activeSong?.artist?.name}
+                    </Link>
+                ) : ('No Active Artist')}
             </p>
         </div>
     </div>
