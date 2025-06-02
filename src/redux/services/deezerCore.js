@@ -24,6 +24,9 @@ export const deezerCoreApi = createApi({
         }),
         getAlbum: builder.query({
             query: (albumId) => `/album/${albumId}`
+        }),
+        getSongsBySearch: builder.query({
+            query: (q) => `/search?q=${q}`
         })
     })
 });
@@ -35,4 +38,5 @@ export const {
     useGetArtistTopTracksQuery,
     useGetArtistAlbumsQuery,
     useGetAlbumQuery,
+    useGetSongsBySearchQuery,
 } = deezerCoreApi;

@@ -24,7 +24,7 @@ const App = () => {
                             <Route path="/artists/:artistId" element={<ArtistDetails/>}/>
                             <Route path="/albums/:albumId" element={<AlbumDetails/>}/>
                             <Route path="/songs/:songId" element={<SongDetails/>}/>
-                            <Route path="/search/:searchTerm" element={<Search/>}/>
+                            <Route path="/search/:searchQuery" element={<Search/>}/>
                         </Routes>
                     </div>
                     <div className="xl:sticky top-0 self-start">
