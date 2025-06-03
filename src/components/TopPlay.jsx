@@ -5,6 +5,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import {FreeMode} from "swiper";
 
 import PlayPause from './PlayPause';
+import {Loader, Error, TrackCard} from "./index";
 import {playPause, setActiveSong} from '../redux/features/playerSlice';
 import {useGetTopChartsQuery} from "../redux/services/deezerCore";
 
@@ -73,7 +74,7 @@ const TopPlay = () => {
 
                 <div className="mt-4 flex flex-col gap-1">
                     {data?.map((song, index) => (
-                        <TopChartCard
+                        <TrackCard
                             key={song.key}
                             song={song}
                             index={index}

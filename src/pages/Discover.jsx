@@ -15,7 +15,7 @@ const Discover = () => {
     const genreId = genres.find((genre) => genre.value === genreListId)?.id || 132;
     const {data, isFetching, error} = useGetTopChartsByGenreQuery(genreId);
 
-    if (isFetching) return <Loader title="Loading songs..."/>;
+    if (isFetching) return <Loader title="Loading discover page..."/>;
 
     if (error) return <Error/>;
 

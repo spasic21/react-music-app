@@ -32,7 +32,7 @@ const AlbumDetails = () => {
     const {activeSong, isPlaying} = useSelector((state) => state.player);
     const {data: albumData, isFetching: isFetchingAlbums, error: albumError} = useGetAlbumQuery(albumId);
 
-    if(isFetchingAlbums) return <Loader title="Loading artist details..."/>;
+    if(isFetchingAlbums) return <Loader title="Loading album details..."/>;
 
     if(albumError) return <Error/>;
 
