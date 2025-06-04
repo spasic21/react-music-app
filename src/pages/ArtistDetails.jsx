@@ -39,7 +39,7 @@ const ArtistDetails = ({topPlayVisible}) => {
     };
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full sm:w-3/4 3xl:w-1/3 mx-auto">
             <ArtistHeader artistData={artistData} />
 
             <div className="flex flex-col">

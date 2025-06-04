@@ -49,25 +49,21 @@ const AlbumDetails = () => {
     };
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full sm:w-3/4 2xl:w-1/2 3xl:w-1/3 mx-auto items-center">
             <AlbumHeader headerData={headerData} />
 
-            <div className="flex flex-col">
-                <h2 className="text-white text-3xl font-bold">Popular</h2>
-
-                <div className="w-full flex flex-col gap-1 mt-4">
-                    {data?.map((song, index) => (
-                        <TrackCard
-                            key={song.key}
-                            song={song}
-                            index={index}
-                            isPlaying={isPlaying}
-                            activeSong={activeSong}
-                            handlePauseClick={handlePauseClick}
-                            handlePlayClick={() => handlePlayClick(song, index)}
-                        />
-                    ))}
-                </div>
+            <div className="flex flex-col w-full gap-1 mt-4">
+                {data?.map((song, index) => (
+                    <TrackCard
+                        key={song.key}
+                        song={song}
+                        index={index}
+                        isPlaying={isPlaying}
+                        activeSong={activeSong}
+                        handlePauseClick={handlePauseClick}
+                        handlePlayClick={() => handlePlayClick(song, index)}
+                    />
+                ))}
             </div>
         </div>
     );

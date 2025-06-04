@@ -62,15 +62,14 @@ const Discover = () => {
                 <h2 className="text-white text-2xl font-bold mb-5">Top Albums</h2>
                 <div className="flex flex-wrap sm:justify-start justify-center gap-8">
                     {topChartAlbums.map((album, i) => (
-                        <div className="w-[250px]" key={i}>
-                            <AlbumCard
-                                albumImage={album.cover_medium || album.artist.picture_medium}
-                                albumTitle={album.title}
-                                artistName={album.artist.name}
-                                albumId={album.id}
-                                index={i}
-                            />
-                        </div>
+                        <AlbumCard
+                            albumImage={album.cover_medium || album.artist.picture_medium}
+                            albumTitle={album.title}
+                            artistName={album.artist.name}
+                            albumId={album.id}
+                            key={album.id}
+                            index={i}
+                        />
                     ))}
                 </div>
             </div>
@@ -81,14 +80,13 @@ const Discover = () => {
                 <h2 className="text-white text-2xl font-bold mb-5">Top Artists</h2>
                 <div className="flex flex-wrap sm:justify-start justify-center gap-8">
                     {topChartArtists.map((artist, i) => (
-                        <div className="w-[250px]" key={i}>
-                            <ArtistCard
-                                artistImage={artist.picture_medium}
-                                artistName={artist.name}
-                                artistId={artist.id}
-                                index={i}
-                            />
-                        </div>
+                        <ArtistCard
+                            artistImage={artist.picture_medium}
+                            artistName={artist.name}
+                            artistId={artist.id}
+                            key={artist.id}
+                            index={i}
+                        />
                     ))}
                 </div>
             </div>

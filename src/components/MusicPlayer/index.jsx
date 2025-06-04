@@ -95,7 +95,7 @@ const MusicPlayer = ({topPlayVisible, toggleTopPlay}) => {
                 />
             </div>
 
-            <div className="flex flex-row items-center">
+            <div className="hidden lg:flex flex-row items-center">
                 <div className="text-white hover:text-[#65FE08] cursor-pointer mr-3" onClick={toggleTopPlay}>
                     {topPlayVisible ? (<AiFillPlaySquare size={30} style={{fill: '#65FE08'}}/>) : (<AiOutlinePlaySquare size={30}/>)}
                 </div>

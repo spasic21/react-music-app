@@ -36,7 +36,7 @@ const SongCard = ({song, isPlaying, activeSong, index, data}) => {
                         {song.title}
                     </Link>
                 </p>
-                <p className="text-sm text-gray-300 mt-1">
+                <p className="text-base text-gray-300 mt-1">
                     <Link to={song.artist.name ? `/artists/${song.artist.id}` : "/top-artists"}>
                         {song.artist.name}
                     </Link>

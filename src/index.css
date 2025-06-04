@@ -17,17 +17,21 @@ html, body {
 
 .scroll-container {
     @apply flex hide-scrollbar overflow-x-auto space-x-4 pb-2 w-full snap-x snap-mandatory;
-    @apply min-w-[612px] max-w-[612px];
-    @apply sm:min-w-[408px] sm:max-w-[408px];
-    @apply md:min-w-[408px] md:max-w-[408px];
 }
 
 .scroll-container.top-play-visible {
-    @apply lg:min-w-[612px] lg:max-w-[612px] xl:min-w-[768px] xl:max-w-[768px];
+    @apply sm:min-w-[408px] sm:max-w-[408px];
+    @apply md:min-w-[512px] md:max-w-[512px];
+    @apply lg:min-w-[612px] lg:max-w-[612px];
+    @apply 3xl:min-w-[1280px] 3xl:max-w-[1280px];
 }
 
 .scroll-container:not(.top-play-visible) {
-    @apply lg:min-w-[768px] lg:max-w-[768px] xl:min-w-[1280px] xl:max-w-[1280px];
+    @apply sm:min-w-[408px] sm:max-w-[408px];
+    @apply md:min-w-[512px] md:max-w-[512px];
+    @apply lg:min-w-[768px] lg:max-w-[768px];
+    @apply xl:min-w-[1024px] xl:max-w-[1024px];
+    @apply 3xl:min-w-[1280px] 3xl:max-w-[1280px];
 }
 
 .bar:nth-child(2) {
