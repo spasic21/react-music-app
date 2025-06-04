@@ -1,8 +1,6 @@
 import {AlbumCard} from "../components";
 import {FaCircleArrowLeft, FaCircleArrowRight} from "react-icons/fa6";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import {useRef} from "react";
 
 const Discography = ({artistName, albumData, topPlayVisible}) => {
