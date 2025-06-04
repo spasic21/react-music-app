@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
+import {AiFillPlaySquare, AiOutlinePlaySquare} from "react-icons/ai";
 
 import {nextSong, prevSong, playPause} from '../../redux/features/playerSlice';
 import Controls from './Controls';
@@ -8,7 +9,7 @@ import Seekbar from './Seekbar';
 import Track from './Track';
 import VolumeBar from './VolumeBar';
 
-const MusicPlayer = () => {
+const MusicPlayer = ({topPlayVisible, toggleTopPlay}) => {
     const {activeSong, currentSongs, currentIndex, isActive, isPlaying} = useSelector((state) => state.player);
     const [duration, setDuration] = useState(0);
     const [seekTime, setSeekTime] = useState(0);
@@ -60,7 +61,7 @@ const MusicPlayer = () => {
         <div className="relative sm:px-12 px-8 w-full flex items-center justify-between">
             <Track isPlaying={isPlaying} isActive={isActive} activeSong={activeSong}/>
 
-            <div className="flex-1 flex flex-col items-center justify-center">
+            <div className="flex-1 flex flex-col items-center justify-center xl:absolute xl:left-1/2 xl:transform xl:-translate-x-1/2">
                 <Controls
                     isPlaying={isPlaying}
                     isActive={isActive}
@@ -94,8 +95,15 @@ const MusicPlayer = () => {
                 />
             </div>
 
-            <VolumeBar value={volume} min="0" max="1" onChange={(event) => setVolume(event.target.value)}
-                       setVolume={setVolume}/>
+            <div className="flex flex-row items-center">
+                <div className="text-white hover:text-[#65FE08] cursor-pointer mr-3" onClick={toggleTopPlay}>
+                    {topPlayVisible ? (<AiFillPlaySquare size={30} style={{fill: '#65FE08'}}/>) : (<AiOutlinePlaySquare size={30}/>)}
+                </div>
+
+
+                <VolumeBar value={volume} min="0" max="1" onChange={(event) => setVolume(event.target.value)} setVolume={setVolume}/>
+
+            </div>
         </div>
     );
 };

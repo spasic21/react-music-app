@@ -3,45 +3,64 @@
 @tailwind utilities;
 
 html, body {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 /* Active Navigation Link */
 .active {
-  @apply text-lime-500;
+    @apply text-lime-500;
 }
 
 .active svg {
-  @apply text-lime-500;
+    @apply text-lime-500;
+}
+
+.scroll-container {
+    @apply flex hide-scrollbar overflow-x-auto space-x-4 pb-2 w-full snap-x snap-mandatory;
+    @apply min-w-[612px] max-w-[612px];
+    @apply sm:min-w-[408px] sm:max-w-[408px];
+    @apply md:min-w-[408px] md:max-w-[408px];
+}
+
+.scroll-container.top-play-visible {
+    @apply lg:min-w-[612px] lg:max-w-[612px] xl:min-w-[768px] xl:max-w-[768px];
+}
+
+.scroll-container:not(.top-play-visible) {
+    @apply lg:min-w-[768px] lg:max-w-[768px] xl:min-w-[1280px] xl:max-w-[1280px];
 }
 
 .bar:nth-child(2) {
-  animation-delay: 0.2s;
+    animation-delay: 0.2s;
 }
+
 .bar:nth-child(3) {
-  animation-delay: 0.4s;
+    animation-delay: 0.4s;
 }
+
 .bar:nth-child(4) {
-  animation-delay: 0.6s;
+    animation-delay: 0.6s;
 }
+
 .bar:nth-child(5) {
-  animation-delay: 0.8s;
+    animation-delay: 0.8s;
 }
+
 .bar:nth-child(6) {
-  animation-delay: 1s;
+    animation-delay: 1s;
 }
 
 .smooth-transition {
-  transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .hide-scrollbar::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .hide-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }

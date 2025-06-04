@@ -15,7 +15,7 @@ const ArtistHeader = ({artistData}) => (
     </div>
 );
 
-const ArtistDetails = () => {
+const ArtistDetails = ({topPlayVisible}) => {
     const dispatch = useDispatch();
     const {artistId} = useParams();
     const {activeSong, isPlaying} = useSelector((state) => state.player);
@@ -45,7 +45,7 @@ const ArtistDetails = () => {
             <div className="flex flex-col">
                 <h2 className="text-white text-3xl font-bold">Popular</h2>
 
-                <div className="w-full flex flex-col gap-1 mt-4">
+                <div className="flex flex-col gap-1 mt-4">
                     {data?.map((song, index) => (
                         <TrackCard
                             key={song.key}
@@ -60,7 +60,7 @@ const ArtistDetails = () => {
                 </div>
             </div>
 
-            <Discography artistName={artistData.name} albumData={albumsData}/>
+            <Discography artistName={artistData.name} albumData={albumsData} topPlayVisible={topPlayVisible} />
         </div>
     );
 };
