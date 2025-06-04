@@ -1,7 +1,7 @@
 import {FaPauseCircle, FaPlayCircle} from "react-icons/fa";
 
 const PlayPause = ({isPlaying, activeSong, song, handlePause, handlePlay}) => {
-    const isCurrent = activeSong?.title === song.title;
+    const isCurrent = activeSong?.id === song.id;
 
     return isPlaying && isCurrent ? (
         <FaPauseCircle

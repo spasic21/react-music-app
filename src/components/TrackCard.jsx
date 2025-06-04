@@ -3,9 +3,9 @@ import PlayPause from "../components/PlayPause.jsx";
 const TrackCard = ({song, index, isPlaying, activeSong, handlePauseClick, handlePlayClick}) => (
     <div className="group w-full flex flex-row items-center hover:bg-[#4a5e4c] py-2 p-4 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer mb-2">
         <div className="w-8 relative flex justify-start items-center mr-8">
-            <h3 className={`font-bold text-base text-white mr-8 group-hover:hidden ${activeSong?.title === song.title ? 'hidden' : 'flex'}`}>{index + 1}.</h3>
+            <h3 className={`font-bold text-base text-white mr-8 group-hover:hidden ${activeSong?.id === song.id ? 'hidden' : 'flex'}`}>{index + 1}.</h3>
 
-            <div className={`absolute inset-0 justify-center items-center group-hover:flex ${activeSong?.title === song.title ? 'flex' : 'hidden'}`}>
+            <div className={`absolute inset-0 justify-center items-center group-hover:flex ${activeSong?.id === song.id ? 'flex' : 'hidden'}`}>
                 <PlayPause
                     isPlaying={isPlaying}
                     activeSong={activeSong}

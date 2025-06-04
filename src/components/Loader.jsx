@@ -7,7 +7,7 @@ const Loader = ({ title }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setMessage("Server is booting back up after inactivity. Please wait a moment...");
-        }, 8000);
+        }, 5000);
 
         return () => clearTimeout(timer);
     }, []);
