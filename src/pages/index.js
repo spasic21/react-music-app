@@ -1,3 +1,4 @@
+import BrowseGenre from './BrowseGenre';
 import Discover from './Discover';
 import TopArtists from './TopArtists';
 import ArtistDetails from './ArtistDetails';
@@ -8,6 +9,7 @@ import TopCharts from './TopCharts';
 import AroundYou from './AroundYou';
 
 export {
+    BrowseGenre,
     Discover,
     Search,
     TopArtists,

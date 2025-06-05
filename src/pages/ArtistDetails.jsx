@@ -7,7 +7,7 @@ import {useGetArtistDetailsQuery, useGetArtistTopTracksQuery, useGetArtistAlbums
 
 const ArtistHeader = ({artistData}) => (
     <div className="w-full flex flex-row mb-10">
-        <img src={artistData?.picture_big} alt={artistData?.name} className="w-64 h-64 object-cover rounded-full"/>
+        <img src={artistData?.picture_big} alt={artistData?.name} className="w-48 h-48 sm:w-64 sm:h-64 object-cover rounded-full mx-auto sm:mx-0"/>
         <div className="flex flex-col justify-end ml-5">
             <h2 className="text-white text-5xl font-bold text-left ml-5">{artistData?.name}</h2>
             <p className="text-white text-xl font-bold text-left ml-5 mt-5">{artistData?.nb_fan.toLocaleString() } followers</p>
@@ -39,7 +39,7 @@ const ArtistDetails = ({topPlayVisible}) => {
     };
 
     return (
-        <div className="flex flex-col w-full sm:w-3/4 3xl:w-1/3 mx-auto">
+        <div className="flex flex-col">
             <ArtistHeader artistData={artistData} />
 
             <div className="flex flex-col">

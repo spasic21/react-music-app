@@ -1,6 +1,8 @@
 import {useState} from 'react';
 import {useNavigate} from "react-router";
 import {FiSearch} from "react-icons/fi";
+import {PiBook, PiBookOpenText} from "react-icons/pi";
+import {NavLink} from "react-router-dom";
 
 const Searchbar = () => {
     const navigate = useNavigate();
@@ -19,18 +21,36 @@ const Searchbar = () => {
                 Search All Songs
             </label>
 
-            <div className="flex flex-row justify-start items-center">
-                <FiSearch className="w-6 h-6 ml-4"/>
-                <input
-                    name="search-field"
-                    autoComplete="off"
-                    id="search-field"
-                    placeholder="Search"
-                    type="search"
-                    value={searchTerm}
-                    onChange={(e) => {setSearchTerm(e.target.value)}}
-                    className="flex-=1 bg-transparent border-none outline-none placeholder-gray-500 text-base text-white p-4"
-                />
+            <div className="flex justify-center items-center">
+                <div className="flex flex-row bg-[#162419] rounded-full w-1/2 justify-center items-center mx-auto">
+                    <FiSearch className="w-6 h-6 mx-4"/>
+
+                    <input
+                        name="search-field"
+                        autoComplete="off"
+                        id="search-field"
+                        placeholder="Search"
+                        type="search"
+                        value={searchTerm}
+                        onChange={(e) => {setSearchTerm(e.target.value)}}
+                        className="flex-1 bg-[#162419] rounded-full border-none outline-none placeholder-gray-500 text-base text-white py-4 pr-4"
+                    />
+
+                    <NavLink
+                        to={'/'}
+                        className="hidden md:flex hover:text-[#65FE08]"
+                    >
+                        {({isActive}) => (
+                            <>
+                                {isActive ? (
+                                    <PiBookOpenText className="w-6 h-6 text-[#65FE08] mx-4"/>
+                                ) : (
+                                    <PiBook className="w-6 h-6 mx-4"/>
+                                )}
+                            </>
+                        )}
+                    </NavLink>
+                </div>
             </div>
         </form>
     );

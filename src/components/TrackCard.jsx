@@ -1,7 +1,17 @@
 import PlayPause from "../components/PlayPause.jsx";
 
 const TrackCard = ({song, index, isPlaying, activeSong, handlePauseClick, handlePlayClick}) => (
-    <div className="group w-full flex flex-row items-center hover:bg-[#4a5e4c] py-2 p-4 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer mb-2">
+    <div
+        className="group w-full flex flex-row items-center hover:bg-[#4a5e4c] py-2 p-4 backdrop-blur-sm animate-slideup rounded-3xl cursor-pointer mb-2"
+        onClick={() => {
+            if (isPlaying && activeSong?.id === song.id) {
+                handlePauseClick();
+            } else {
+                handlePlayClick();
+
+            }
+        }}
+    >
         <div className="w-8 relative flex justify-start items-center mr-8">
             <h3 className={`font-bold text-base text-white mr-8 group-hover:hidden ${activeSong?.id === song.id ? 'hidden' : 'flex'}`}>{index + 1}.</h3>
 
@@ -17,7 +27,7 @@ const TrackCard = ({song, index, isPlaying, activeSong, handlePauseClick, handle
         </div>
 
         <div className="flex-1 flex flex-row justify-between items-center">
-            <img src={song?.album.cover} alt={song.title} className="w-20 h-20 rounded-lg" />
+            <img src={song?.album.cover} alt={song.title} className="w-20 h-20 rounded-3xl" />
 
             <div className="flex-1 flex flex-col justify-center mx-3">
                 <p className="text-xl font-bold text-white">{song?.title}</p>

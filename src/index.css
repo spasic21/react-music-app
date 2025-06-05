@@ -8,29 +8,29 @@ html, body {
 
 /* Active Navigation Link */
 .active {
-    @apply text-lime-500;
+    @apply text-[#65FE08];
 }
 
 .active svg {
-    @apply text-lime-500;
+    @apply text-[#65FE08];
 }
 
 .scroll-container {
-    @apply flex hide-scrollbar overflow-x-auto space-x-4 pb-2 w-full snap-x snap-mandatory;
+    @apply flex hide-scrollbar overflow-x-auto space-x-2 pb-2 w-full snap-x snap-mandatory;
 }
 
 .scroll-container.top-play-visible {
-    @apply sm:min-w-[408px] sm:max-w-[408px];
-    @apply md:min-w-[512px] md:max-w-[512px];
-    @apply lg:min-w-[612px] lg:max-w-[612px];
-    @apply 3xl:min-w-[1280px] 3xl:max-w-[1280px];
+    @apply sm:min-w-[300px] sm:max-w-[300px];
+    @apply md:min-w-[408px] md:max-w-[408px];
+    @apply lg:min-w-[512px] lg:max-w-[512px];
+    @apply 3xl:min-w-[1028px] 3xl:max-w-[1028px];
 }
 
 .scroll-container:not(.top-play-visible) {
-    @apply sm:min-w-[408px] sm:max-w-[408px];
-    @apply md:min-w-[512px] md:max-w-[512px];
-    @apply lg:min-w-[768px] lg:max-w-[768px];
-    @apply xl:min-w-[1024px] xl:max-w-[1024px];
+    @apply sm:min-w-[300px] sm:max-w-[300px];
+    @apply md:min-w-[408px] md:max-w-[408px];
+    @apply lg:min-w-[512px] lg:max-w-[512px];
+    @apply xl:min-w-[768px] xl:max-w-[768px];
     @apply 3xl:min-w-[1280px] 3xl:max-w-[1280px];
 }
 

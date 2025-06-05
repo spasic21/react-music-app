@@ -19,41 +19,39 @@ const Discography = ({artistName, albumData, topPlayVisible}) => {
     };
 
     return (
-        <div className="w-full mt-10 px-10 sm:px-6">
-            <div className="flex flex-col">
-                <h2 className="text-white font-bold text-2xl text-left mb-4">Discography</h2>
+        <div className="w-full mt-10 px-10 sm:px-6 hidden sm:flex flex-col">
+            <h2 className="text-white font-bold text-2xl text-left mb-4">Discography</h2>
 
-                <div className="flex flex-row items-center gap-4">
-                    <button
-                        onClick={scrollLeft}
-                        className="text-white hover:text-lime-400 transition-colors"
-                        aria-label="Scroll left"
-                    >
-                        <FaCircleArrowLeft size={30} />
-                    </button>
-                    <div
-                        ref={scrollRef}
-                        className={`scroll-container ${topPlayVisible ? "top-play-visible" : ""}`}
-                    >
-                        {albumData.data.map((album, index) => (
-                            <div key={album.id || index} className="snap-start flex-shrink-0 min-w-[200px]">
-                                <AlbumCard
-                                    albumImage={album.cover_medium}
-                                    albumTitle={album.title}
-                                    artistName={artistName}
-                                    albumId={album.id}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                    <button
-                        onClick={scrollRight}
-                        className="text-white hover:text-[#65FE08] transition-colors"
-                        aria-label="Scroll right"
-                    >
-                        <FaCircleArrowRight size={30} />
-                    </button>
+            <div className="flex flex-row items-center gap-4">
+                <button
+                    onClick={scrollLeft}
+                    className="text-white hover:text-[#65FE08] transition-colors"
+                    aria-label="Scroll left"
+                >
+                    <FaCircleArrowLeft size={30} />
+                </button>
+                <div
+                    ref={scrollRef}
+                    className={`scroll-container ${topPlayVisible ? "top-play-visible" : ""}`}
+                >
+                    {albumData.data.map((album, index) => (
+                        <div key={album.id || index} className="snap-start flex-shrink-0 w-32 sm:w-36 md:w-40">
+                            <AlbumCard
+                                albumImage={album.cover_medium}
+                                albumTitle={album.title}
+                                artistName={artistName}
+                                albumId={album.id}
+                            />
+                        </div>
+                    ))}
                 </div>
+                <button
+                    onClick={scrollRight}
+                    className="text-white hover:text-[#65FE08] transition-colors"
+                    aria-label="Scroll right"
+                >
+                    <FaCircleArrowRight size={30} />
+                </button>
             </div>
         </div>
     );

@@ -1,10 +1,10 @@
 import {Route, Routes} from 'react-router-dom';
 import {MusicPlayer, Searchbar, Sidebar, TopPlay} from './components';
-import {AlbumDetails, AroundYou, ArtistDetails, Discover, Search, SongDetails, TopArtists, TopCharts} from './pages';
+import {AlbumDetails, AroundYou, ArtistDetails, BrowseGenre, Discover, Search, SongDetails, TopArtists, TopCharts} from './pages';
 import {useState} from "react";
 
 const App = () => {
-    const [topPlayVisible, setTopPlayVisible] = useState(true);
+    const [topPlayVisible, setTopPlayVisible] = useState(false);
 
     const toggleTopPlay = () => setTopPlayVisible(prev => !prev);
 
@@ -18,11 +18,12 @@ const App = () => {
             </div>
 
             {/* Middle Column: Searchbar + Routes */}
-            <div className="flex flex-col">
+            <div className="flex flex-col w-full sm:w-3/4 3xl:w-1/2 mx-auto">
                 <Searchbar />
-                <div className="h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar pb-40 px-10 sm:px-6">
+                <div className="w-full h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar pb-40 px-10 sm:px-6 py-6">
                     <Routes>
-                        <Route path="/" element={<Discover />} />
+                        <Route path="/" element={<BrowseGenre />} />
+                        <Route path="/discover/:genreValue" element={<Discover />} />
                         <Route path="/top-artists" element={<TopArtists />} />
                         <Route path="/top-charts" element={<TopCharts />} />
                         <Route path="/around-you" element={<AroundYou />} />

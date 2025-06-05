@@ -1,5 +1,3 @@
-import React from 'react';
+const AroundYou = () => <div className="text-white text-2xl">Around You Page Not Yet Implemented:(</div>;
 
-const CountryTracks = () => <div>CountryTracks</div>;
-
-export default CountryTracks;
+export default AroundYou;
