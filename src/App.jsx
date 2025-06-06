@@ -1,17 +1,28 @@
 import {Route, Routes} from 'react-router-dom';
 import {MusicPlayer, Searchbar, Sidebar, TopPlay} from './components';
 import {AlbumDetails, AroundYou, ArtistDetails, BrowseGenre, Discover, Search, SongDetails, TopArtists, TopCharts} from './pages';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const App = () => {
     const [topPlayVisible, setTopPlayVisible] = useState(false);
 
     const toggleTopPlay = () => setTopPlayVisible(prev => !prev);
 
+    useEffect(() => {
+        const setVH = () => {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        };
+
+        setVH();
+        window.addEventListener('resize', setVH);
+        return () => window.removeEventListener('resize', setVH);
+    }, []);
+
     return (
         <>
             <div className={`relative min-h-screen grid bg-gradient-to-br from-black to-[#126612] transition-all duration-500
-            ${topPlayVisible ? 'grid-cols-1 xl:grid-cols-[240px_1fr_550px]' : 'grid-cols-1 sm:grid-cols-[240px_1fr]'}`}>
+                ${topPlayVisible ? 'grid-cols-1 xl:grid-cols-[240px_1fr_550px]' : 'grid-cols-1 sm:grid-cols-[240px_1fr]'}`}>
 
                 {/* Left Sidebar */}
                 <div className="hidden md:flex flex-col bg-[#162419]">
@@ -19,7 +30,7 @@ const App = () => {
                 </div>
 
                 {/* Middle Column: Searchbar + Routes */}
-                <div className="flex flex-col w-full h-[calc(100vh-7rem)] sm:w-3/4 3xl:w-1/2 mx-auto">
+                <div className="flex flex-col w-full h-[calc(var(--vh,1vh)_*100-7rem)] sm:w-3/4 3xl:w-1/2 mx-auto">
                     <Searchbar />
                     <div className="w-full overflow-y-scroll hide-scrollbar px-10 sm:px-6 py-6">
                         <Routes>
