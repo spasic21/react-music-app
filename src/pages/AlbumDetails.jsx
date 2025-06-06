@@ -11,11 +11,11 @@ const AlbumHeader = ({headerData}) => {
 
     return (
         <div className="w-full flex flex-row mb-10">
-            <img src={headerData?.cover_big} alt={headerData?.title} className="w-64 h-64 object-cover rounded-full"/>
+            <img src={headerData?.cover_big} alt={headerData?.title} className="w-24 h-24 sm:w-64 sm:h-64 object-cover rounded-full"/>
             <div className="flex flex-col justify-end ml-5">
-                <h2 className="text-white text-5xl font-bold text-left ml-5">{headerData?.title}</h2>
+                <h2 className="text-white text-2xl sm:text-5xl font-bold text-left ml-5">{headerData?.title}</h2>
 
-                <p className="text-white text-xl font-bold text-left ml-5 mt-5">
+                <p className="text-white text-lg sm:text-xl font-bold text-left ml-5 mt-5">
                     <Link to={`/artists/${headerData?.artist?.id}`}>
                         {headerData?.artist?.name}
                     </Link>{" "}
@@ -55,7 +55,7 @@ const AlbumDetails = () => {
             <div className="flex flex-col w-full gap-1 mt-4">
                 {data?.map((song, index) => (
                     <TrackCard
-                        key={song.key}
+                        key={song.id}
                         song={song}
                         index={index}
                         isPlaying={isPlaying}

@@ -44,7 +44,7 @@ const TopPlay = () => {
                 <div className="mt-4 flex flex-col gap-1">
                     {data?.map((song, index) => (
                         <TrackCard
-                            key={song.key}
+                            key={song.id}
                             song={song}
                             index={index}
                             isPlaying={isPlaying}
@@ -75,7 +75,7 @@ const TopPlay = () => {
                 >
                     {data?.map((song, index) => (
                         <SwiperSlide
-                            key={song.key}
+                            key={song.id}
                             index={index}
                             style={{width: '25%', height: 'auto'}}
                             className="shadow-lg rounded-full animate-slideright"

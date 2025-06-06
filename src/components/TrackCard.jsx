@@ -13,7 +13,7 @@ const TrackCard = ({song, index, isPlaying, activeSong, handlePauseClick, handle
         }}
     >
         <div className="w-8 relative flex justify-start items-center mr-8">
-            <h3 className={`font-bold text-base text-white mr-8 group-hover:hidden ${activeSong?.id === song.id ? 'hidden' : 'flex'}`}>{index + 1}.</h3>
+            <h3 className={`font-bold text-base text-white group-hover:hidden ${activeSong?.id === song.id ? 'hidden' : 'flex'}`}>{index + 1}.</h3>
 
             <div className={`absolute inset-0 justify-center items-center group-hover:flex ${activeSong?.id === song.id ? 'flex' : 'hidden'}`}>
                 <PlayPause
@@ -27,11 +27,11 @@ const TrackCard = ({song, index, isPlaying, activeSong, handlePauseClick, handle
         </div>
 
         <div className="flex-1 flex flex-row justify-between items-center">
-            <img src={song?.album.cover} alt={song.title} className="w-20 h-20 rounded-3xl" />
+            <img src={song?.album.cover} alt={song.title} className="w-12 h-12 sm:w-24 sm:h-24 rounded-xl sm:rounded-3xl" />
 
-            <div className="flex-1 flex flex-col justify-center mx-3">
-                <p className="text-xl font-bold text-white">{song?.title}</p>
-                <p className="text-base text-gray-300 mt-1">{song?.artist.name}</p>
+            <div className="flex-1 flex flex-col justify-center mx-3 overflow-hidden">
+                <p className="text-base sm:text-xl font-bold text-white truncate max-w-[140px] sm:max-w-full">{song?.title}</p>
+                <p className="text-sm sm:text-base text-gray-300 mt-1">{song?.artist.name}</p>
             </div>
         </div>
     </div>

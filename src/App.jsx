@@ -9,44 +9,47 @@ const App = () => {
     const toggleTopPlay = () => setTopPlayVisible(prev => !prev);
 
     return (
-        <div className={`relative min-h-screen grid bg-gradient-to-br from-black to-[#126612] transition-all duration-500 
-            ${topPlayVisible ? 'grid-cols-[240px_1fr_550px]' : 'grid-cols-[240px_1fr]'}`}>
+        <>
+            <div className={`relative min-h-screen grid bg-gradient-to-br from-black to-[#126612] transition-all duration-500
+            ${topPlayVisible ? 'grid-cols-1 xl:grid-cols-[240px_1fr_550px]' : 'grid-cols-1 sm:grid-cols-[240px_1fr]'}`}>
 
-            {/* Left Sidebar */}
-            <div className="hidden md:flex flex-col bg-[#162419]">
-                <Sidebar />
-            </div>
-
-            {/* Middle Column: Searchbar + Routes */}
-            <div className="flex flex-col w-full sm:w-3/4 3xl:w-1/2 mx-auto">
-                <Searchbar />
-                <div className="w-full h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar pb-40 px-10 sm:px-6 py-6">
-                    <Routes>
-                        <Route path="/" element={<BrowseGenre />} />
-                        <Route path="/discover/:genreValue" element={<Discover />} />
-                        <Route path="/top-artists" element={<TopArtists />} />
-                        <Route path="/top-charts" element={<TopCharts />} />
-                        <Route path="/around-you" element={<AroundYou />} />
-                        <Route path="/artists/:artistId" element={<ArtistDetails topPlayVisible={topPlayVisible} />} />
-                        <Route path="/albums/:albumId" element={<AlbumDetails />} />
-                        <Route path="/songs/:songId" element={<SongDetails />} />
-                        <Route path="/search/:searchQuery" element={<Search />} />
-                    </Routes>
+                {/* Left Sidebar */}
+                <div className="hidden md:flex flex-col bg-[#162419]">
+                    <Sidebar />
                 </div>
-            </div>
 
-            {/* Right Sidebar: TopPlay */}
-            {topPlayVisible && (
-                <div className={`hidden xl:block transition-transform duration-500 ease-in-out bg-[#162419] ${topPlayVisible ? 'translate-x-0' : 'translate-x-full'}`}>
-                    <TopPlay />
+                {/* Middle Column: Searchbar + Routes */}
+                <div className="flex flex-col w-full h-[calc(100vh-7rem)] sm:w-3/4 3xl:w-1/2 mx-auto">
+                    <Searchbar />
+                    <div className="w-full overflow-y-scroll hide-scrollbar px-10 sm:px-6 py-6">
+                        <Routes>
+                            <Route path="/" element={<BrowseGenre />} />
+                            <Route path="/discover/:genreValue" element={<Discover />} />
+                            <Route path="/top-artists" element={<TopArtists />} />
+                            <Route path="/top-charts" element={<TopCharts />} />
+                            <Route path="/around-you" element={<AroundYou />} />
+                            <Route path="/artists/:artistId" element={<ArtistDetails topPlayVisible={topPlayVisible} />} />
+                            <Route path="/albums/:albumId" element={<AlbumDetails />} />
+                            <Route path="/songs/:songId" element={<SongDetails />} />
+                            <Route path="/search/:searchQuery" element={<Search />} />
+                        </Routes>
+                    </div>
                 </div>
-            )}
+
+                {/* Right Sidebar: TopPlay */}
+                {topPlayVisible && (
+                    <div className={`hidden xl:block transition-transform duration-500 ease-in-out bg-[#162419] ${topPlayVisible ? 'translate-x-0' : 'translate-x-full pointer-events-none'}`}>
+                        <TopPlay />
+                    </div>
+                )}
+            </div>
 
             {/* Music Player Bar */}
             <div className="absolute h-28 bottom-0 left-0 right-0 flex animate-slideup bg-gradient-to-br from-white/10 to-[#2a8032] backdrop-blur-lg rounded-t-3xl z-10">
                 <MusicPlayer topPlayVisible={topPlayVisible} toggleTopPlay={toggleTopPlay} />
             </div>
-        </div>
+        </>
+
     );
 };
 

@@ -35,7 +35,7 @@ const Discography = ({artistName, albumData, topPlayVisible}) => {
                     className={`scroll-container ${topPlayVisible ? "top-play-visible" : ""}`}
                 >
                     {albumData.data.map((album, index) => (
-                        <div key={album.id || index} className="snap-start flex-shrink-0 w-32 sm:w-36 md:w-40">
+                        <div key={album.id || index} className="snap-start flex-shrink-0">
                             <AlbumCard
                                 albumImage={album.cover_medium}
                                 albumTitle={album.title}

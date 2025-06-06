@@ -45,7 +45,7 @@ const Discover = () => {
                             handlePlayClick={() => dispatch(playPause(true))}
                             data={topChartSongs}
                             index={i}
-                            key={track.key}
+                            key={track.id}
                         />
                     ))}
                 </div>
@@ -57,15 +57,14 @@ const Discover = () => {
                 <h2 className="text-white text-2xl font-bold mb-5">Top Albums</h2>
                 <div className="flex flex-wrap justify-center gap-8">
                     {topChartAlbums.map((album, i) => (
-                        <div key={album.id} className="w-[250px]">
-                            <AlbumCard
-                                albumImage={album.cover_medium || album.artist.picture_medium}
-                                albumTitle={album.title}
-                                artistName={album.artist.name}
-                                albumId={album.id}
-                                index={i}
-                            />
-                        </div>
+                        <AlbumCard
+                            albumImage={album.cover_medium || album.artist.picture_medium}
+                            albumTitle={album.title}
+                            artistName={album.artist.name}
+                            albumId={album.id}
+                            index={i}
+                            key={album.id}
+                        />
                     ))}
                 </div>
             </div>
@@ -76,15 +75,13 @@ const Discover = () => {
                 <h2 className="text-white text-2xl font-bold mb-5">Top Artists</h2>
                 <div className="flex flex-wrap justify-center gap-8">
                     {topChartArtists.map((artist, i) => (
-                        <div key={artist.id} className="w-[250px]">
-                            <ArtistCard
-                                artistImage={artist.picture_medium}
-                                artistName={artist.name}
-                                artistId={artist.id}
-                                key={artist.id}
-                                index={i}
-                            />
-                        </div>
+                        <ArtistCard
+                            artistImage={artist.picture_medium}
+                            artistName={artist.name}
+                            artistId={artist.id}
+                            key={artist.id}
+                            index={i}
+                        />
                     ))}
                 </div>
             </div>

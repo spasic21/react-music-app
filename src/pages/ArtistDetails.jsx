@@ -7,10 +7,10 @@ import {useGetArtistDetailsQuery, useGetArtistTopTracksQuery, useGetArtistAlbums
 
 const ArtistHeader = ({artistData}) => (
     <div className="w-full flex flex-row mb-10">
-        <img src={artistData?.picture_big} alt={artistData?.name} className="w-48 h-48 sm:w-64 sm:h-64 object-cover rounded-full mx-auto sm:mx-0"/>
+        <img src={artistData?.picture_big} alt={artistData?.name} className="w-24 h-24 sm:w-64 sm:h-64 object-cover rounded-full mx-auto sm:mx-0"/>
         <div className="flex flex-col justify-end ml-5">
-            <h2 className="text-white text-5xl font-bold text-left ml-5">{artistData?.name}</h2>
-            <p className="text-white text-xl font-bold text-left ml-5 mt-5">{artistData?.nb_fan.toLocaleString() } followers</p>
+            <h2 className="text-white text-2xl sm:text-5xl font-bold text-left ml-5">{artistData?.name}</h2>
+            <p className="text-white text-lg sm:text-xl font-bold text-left ml-5 mt-5">{artistData?.nb_fan.toLocaleString() } followers</p>
         </div>
     </div>
 );
@@ -43,12 +43,12 @@ const ArtistDetails = ({topPlayVisible}) => {
             <ArtistHeader artistData={artistData} />
 
             <div className="flex flex-col">
-                <h2 className="text-white text-3xl font-bold">Popular</h2>
+                <h2 className="text-white text-xl sm:text-3xl font-bold">Popular</h2>
 
                 <div className="flex flex-col gap-1 mt-4">
                     {data?.map((song, index) => (
                         <TrackCard
-                            key={song.key}
+                            key={song.id}
                             song={song}
                             index={index}
                             isPlaying={isPlaying}

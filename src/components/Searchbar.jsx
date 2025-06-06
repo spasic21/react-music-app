@@ -22,7 +22,7 @@ const Searchbar = () => {
             </label>
 
             <div className="flex justify-center items-center">
-                <div className="flex flex-row bg-[#162419] rounded-full w-1/2 justify-center items-center mx-auto">
+                <div className="flex flex-row bg-[#162419] rounded-full justify-center items-center mx-auto">
                     <FiSearch className="w-6 h-6 mx-4"/>
 
                     <input
@@ -38,7 +38,7 @@ const Searchbar = () => {
 
                     <NavLink
                         to={'/'}
-                        className="hidden md:flex hover:text-[#65FE08]"
+                        className="flex hover:text-[#65FE08]"
                     >
                         {({isActive}) => (
                             <>
