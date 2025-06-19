@@ -49,7 +49,7 @@ const AlbumDetails = () => {
     };
 
     return (
-        <div className="flex flex-col w-full sm:w-3/4 2xl:w-1/2 3xl:w-1/3 mx-auto items-center">
+        <div className="flex flex-col w-full items-center">
             <AlbumHeader headerData={headerData} />
 
             <div className="flex flex-col w-full gap-1 mt-4">

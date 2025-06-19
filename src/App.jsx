@@ -30,9 +30,9 @@ const App = () => {
                 </div>
 
                 {/* Middle Column: Searchbar + Routes */}
-                <div className="flex flex-col w-full h-[calc(var(--vh,1vh)_*100-7rem)] sm:w-3/4 3xl:w-1/2 mx-auto">
+                <div className="flex flex-col w-full h-[calc(var(--vh,1vh)_*100-7rem)] sm:w-3/4 3xl:w-1/2 mx-auto px-5">
                     <Searchbar />
-                    <div className="w-full overflow-y-scroll hide-scrollbar px-10 sm:px-6 py-6">
+                    <div className="w-full overflow-y-scroll hide-scrollbar py-6">
                         <Routes>
                             <Route path="/" element={<BrowseGenre />} />
                             <Route path="/discover/:genreValue" element={<Discover />} />

@@ -22,7 +22,7 @@ const Searchbar = () => {
             </label>
 
             <div className="flex justify-center items-center">
-                <div className="flex flex-row bg-[#162419] rounded-full justify-center items-center mx-auto">
+                <div className="w-[350px] flex flex-row bg-[#162419] rounded-full justify-center items-center mx-auto">
                     <FiSearch className="w-6 h-6 mx-4"/>
 
                     <input
