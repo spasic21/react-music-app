@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 
 const AlbumCard = ({albumImage, albumTitle, artistName, albumId}) => {
     return (
-        <div className="w-[135px] sm:w-[250px] hover:bg-[#4a5e4c] p-4 rounded-3xl cursor-pointer mb-2">
+        <div className="w-[135px] sm:w-[250px] hover:bg-[#4a5e4c] p-4 rounded-3xl animate-slideup cursor-pointer mb-2">
             <Link to={albumTitle ? `/albums/${albumId}` : "/top-albums"}>
                 <img src={albumImage} alt={artistName} className="w-full rounded-3xl object-cover"/>
 

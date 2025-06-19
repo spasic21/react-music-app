@@ -26,7 +26,7 @@ const Sidebar = () => {
 
     return (
         <>
-            <div className="md:flex hidden flex-col w-[240px] flex-shrink-0 py-10 px-4 bg-[#162419]">
+            <div className="md:flex hidden flex-col flex-shrink-0 py-10 px-4 rounded-3xl">
                 <img src={musicPlayerLogo} alt="logo" className="w-full h-14 object-cover rounded-lg"/>
                 <NavLinks/>
             </div>
